@@ -1,15 +1,510 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Ofertas de trabajo</title>
+    <style>
+        :root {
+            --seim-dark: #071923;
+            --seim-dark-2: #0d2733;
+            --seim-blue: #00a8c6;
+            --seim-blue-light: #38d4df;
+            --seim-white: #ffffff;
+            --seim-text: #dce9ed;
+            --seim-muted: #9eb4ba;
+            --seim-card: rgba(255, 255, 255, 0.08);
+            --seim-border: rgba(255, 255, 255, 0.16);
+            --success: #004b57;
+            --danger: #fdb524;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--seim-text);
+            line-height: 1.6;
+            background:
+                    radial-gradient(
+                            circle at top right,
+                            rgba(0, 168, 198, 0.18),
+                            transparent 35%
+                    ),
+                    linear-gradient(
+                            135deg,
+                            var(--seim-dark),
+                            #0a202b 55%,
+                            #061219
+                    );
+        }
+
+        /* Cabecera */
+
+        .hero {
+            position: relative;
+            min-height: 440px;
+            padding: 110px 24px 90px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+            background:
+                    linear-gradient(
+                            110deg,
+                            rgba(4, 18, 27, 0.98),
+                            rgba(7, 46, 59, 0.88)
+                    );
+            border-bottom: 1px solid var(--seim-border);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            right: -120px;
+            top: -150px;
+            border: 70px solid rgba(0, 168, 198, 0.17);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            right: 120px;
+            bottom: -110px;
+            border: 35px solid rgba(56, 212, 223, 0.12);
+            border-radius: 50%;
+        }
+
+        .hero h1,
+        .hero p {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero h1 {
+            color: var(--seim-white);
+            font-size: clamp(2.4rem, 6vw, 5.5rem);
+            line-height: 1.05;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .hero h1::first-line {
+            color: var(--seim-blue-light);
+        }
+
+        .hero p {
+            color: var(--seim-text);
+            font-size: 1.12rem;
+            margin-bottom: 5px;
+        }
+
+        .hero p:first-of-type {
+            color: var(--seim-blue-light);
+            font-weight: bold;
+        }
+
+        /* Introducción */
+
+        .intro {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 90px 24px 55px;
+        }
+
+        .intro h2 {
+            color: var(--seim-white);
+            font-size: clamp(2rem, 4vw, 3.3rem);
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .intro h2::after {
+            content: "";
+            display: block;
+            width: 65px;
+            height: 4px;
+            margin-top: 18px;
+            background: var(--seim-blue);
+            border-radius: 10px;
+        }
+
+        .intro p {
+            max-width: 850px;
+            color: var(--seim-muted);
+            font-size: 1.05rem;
+            margin-bottom: 18px;
+        }
+
+        .intro strong {
+            color: var(--seim-white);
+        }
+
+        /* Listado */
+
+        .portfolio-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 25px 24px 90px;
+        }
+
+        .container h2 {
+            color: var(--seim-white);
+            font-size: clamp(1.7rem, 3vw, 2.6rem);
+            margin-bottom: 32px;
+        }
+
+        .container h2::first-letter {
+            color: var(--seim-blue-light);
+        }
+
+        .portfolio-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            list-style: none;
+            counter-reset: portfolios;
+        }
+
+        .portfolio-list  {
+            counter-increment: portfolios;
+            position: relative;
+        }
+
+        .portfolio-list  a,
+        .portfolio-list  unavailable {
+            min-height: 74px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 18px 22px 18px 22px;
+            position: relative;
+            border-radius: 4px;
+        }
+
+        .portfolio-list  a {
+            color: var(--seim-white);
+            text-decoration: none;
+            background: var(--seim-card);
+            border: 1px solid var(--seim-border);
+            border-left: 3px solid var(--success);
+            transition:
+                    transform 0.25s ease,
+                    background 0.25s ease,
+                    border-color 0.25s ease,
+                    box-shadow 0.25s ease;
+        }
+
+        .portfolio-list  a::before,
+        .portfolio-list  unavailable::before {
+
+            position: absolute;
+            font-size: 0.85rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .portfolio-list  a::before {
+            color: var(--seim-blue-light);
+        }
+
+        .portfolio-list  a:hover {
+            transform: translateY(-5px);
+            background: rgba(0, 168, 198, 0.16);
+            border-color: var(--seim-blue);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .status {
+            margin-left: auto;
+            flex-shrink: 0;
+            font-size: 1.1rem;
+        }
+
+        .portfolio-list  unavailable {
+            color: var(--seim-muted);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-left: 3px solid var(--danger);
+            opacity: 0.7;
+        }
+
+        .portfolio-list  unavailable::before {
+            color: var(--danger);
+        }
+
+        /* Pie de página */
+
+        footer {
+            padding: 55px 24px;
+            text-align: center;
+            background: #041017;
+            border-top: 1px solid var(--seim-border);
+        }
+
+        footer::before {
+            content: "";
+            display: block;
+            width: 55px;
+            height: 4px;
+            margin: 0 auto 25px;
+            background: var(--seim-blue);
+            border-radius: 10px;
+        }
+
+        footer p {
+            color: var(--seim-muted);
+            margin: 4px 0;
+        }
+
+        footer p:first-of-type {
+            color: var(--seim-white);
+            font-size: 1.1rem;
+        }
+
+        footer strong {
+            color: var(--seim-blue-light);
+        }
+
+        /* Responsive */
+
+        @media (max-width: 760px) {
+            .hero {
+                min-height: 380px;
+                padding: 85px 22px 65px;
+            }
+
+            .hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .intro {
+                padding-top: 65px;
+            }
+
+            .portfolio-list {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-list  a,
+            .portfolio-list  unavailable {
+                padding-left: 62px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .container h2 {
+                font-size: 1.6rem;
+            }
+
+            .portfolio-list  a,
+            .portfolio-list  unavailable {
+                padding: 16px 15px 16px 54px;
+                font-size: 0.95rem;
+            }
+
+            .portfolio-list  a::before,
+            .portfolio-list  unavailable::before {
+                left: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header></header>
-    <main>
-        <h1>Ofertas de trabajo</h1>
-        <div class="ofertas">
-            <div class="oferta"></div>
+    <header class="hero"><h1 class="intro">S.E.I.M.</h1></header>
+    <main class="container">
+        <h1 class="intro">Ofertas de trabajo</h1>
+        <div class="ofertas portfolio-list">
+            <div class="oferta portfolio-section">
+                <h2 class="portfolio-section__title">Oferta 1</h2>
+                <p><pre>Requisitos
+
+                    Estudios mínimos
+
+                    Licenciatura
+
+                    Requisitos mínimos
+
+                    Requisitos mínimos:
+
+                    • Experiencia: Entre 3 y 5 años de experiencia previa en puestos similares.
+                    • Titulación: Grado Superior o Licenciatura/Grado Universitario.
+                    • Ubicación: Residencia imprescindible en España (no se admiten candidaturas desde LATAM).
+                    • Conocimientos técnicos imprescindibles:
+                    o Desarrollo en entorno Unix con Lenguaje C y Pro*C.
+                    o Programación en Shell Script Unix.
+                    o BBDD Oracle: Lenguaje PL/SQL y SQL Plus.
+                    o Administración básica de Oracle (gestión de objetos: tablas, funciones, procedimientos, paquetes, triggers, etc.).
+                    • Metodología: Waterfall.
+
+                    Requisitos deseables:
+                    • Experiencia con Oracle Developer Suite 10g (Forms Developer y Reports Developer).
+                    • Nivel medio de inglés.
+
+                    • Guardias y disponibilidad: Disponibilidad para picos de producción como campañas de Navidad, Black Friday, etc.
+                    • Viajes: Desplazamientos muy excepcionales.
+
+                    Descripción
+
+                    Funciones
+                    En Cas Training, buscamos un/a Application Developer para incorporarse a un proyecto del sector Gran Consumo enfocado en sistemas WMS (Warehouse Management System).
+                    Descripción del puesto
+
+                    Integrado/a en el equipo, te encargarás del desarrollo, mantenimiento y soporte sobre la plataforma WMS, participando en un entorno estable y colaborativo.
+
+
+                    Se ofrece
+                    • Contrato indefinido
+                    • Modalidad: Remoto (Delegación de adscripción: Madrid)
+                    • Jornada: 40h/semanales, de lunes a viernes en horario de 8:00 a 17:00 h. (Jornada de verano sujeta a necesidades de cliente)
+                    • Formar parte de un equipo dinámico altamente cualificado en una empresa en proceso de expansión
+                    • Participar en proyectos innovadores y punteros para grandes clientes de primer nivel en distintos sectores de mercado
+                    • Proyectos de larga duración, estabilidad profesional y progresión laboral
+                    • Acceso gratuito al catálogo de formación anual de Cas Training
+                    • Salario negociable en base a la experiencia y valía del candidato/a
+
+                    Categoría
+
+                    Otros - Sin especificar
+
+                    Nivel
+
+                    Empleado/a
+
+                    Personas a cargo
+
+                    0
+
+                    Vacantes
+
+                    1
+
+                    Salario
+
+                    29.000€ - 33.000€ Bruto/año
+            </pre></p>
+                <h3><strong class="intro"><a href="https://seimciclos-my.sharepoint.com/:f:/g/personal/onintza_centroseim_com/IgDiHrkgGt6JTqbBC9pKWVchAWSrTb-eBeRVZxXPezde7to">Candidatos</a></strong></h3>
+            </div>
+            <div class="oferta portfolio-section">
+                <h2 class="portfolio-section__title">Oferta 2</h2>
+                <p><pre>Requisitos
+
+Ciclo formativo grado superior
+
+Experiencia minina
+
+Sin experiencia
+
+Conocimientos necesarios
+
+            Full-stack      Desarrollo front-End         Desarrollo back-End
+
+            Git                  PostGresSQL                     ReactJs                    .NET
+
+Sector
+
+            Programación, consultoría y otras actividades informáticas
+
+Descripción
+
+            Buscamos un desarrollador Full Stack .NET con experiencia en ASP.NET, .NET Worker Services, .NET Core Web API y Blazor WebAssembly o MAUI, para incorporarse a un grupo multidisciplinar que trabaja en entornos de alta exigencia tecnología y gran impacto en negocio.
+
+
+
+Si buscas estabilidad, trabajo remoto y un entorno donde seguir creciendo profesionalmente, esta oportunidad puede ser para ti.
+
+
+
+Funciones
+
+·         Desarrollo e implementación de soluciones antifraude
+
+·         Participación en el desarrollo de aplicaciones Full Stack
+
+·         Colaboración con equipos de negocio, arquitectura y científicos de datos
+
+·         Mantenimiento correctivo y evolutivo de las soluciones desarrolladas
+
+·         Participación en análisis técnicos y resolución de incidencias
+
+Requisitos imprescindibles
+
+·         Ciclo formativo de grado superior
+
+·         Experiencia en desarrollo Full Stack con las tecnologías mencionadas anteriormente
+
+Valoramos
+
+·         Capacidad analítica orientada a la resolución de problemas
+
+·         Habilidad para trabajar en equipo
+
+·         Capacidad de comunicación y colaboración con diferentes áreas y perfiles tecnológicos
+
+·         Proactividad y orientación a resultados
+
+Ubicación
+
+            100% remoto
+
+Visitas puntuales a oficinas  ubicadas  en la zona norte de Madrid
+
+Ofrecemos
+
+·         Contrato indefinido
+
+·         Modalidad 100% remoto
+
+·         Proyecto profesional
+
+·         Formar parte de un equipo interno consolidado
+
+Salario
+
+            23000 – 26000 €</pre></p>
+                <h3><strong class="intro"><a href="https://seimciclos-my.sharepoint.com/:f:/g/personal/onintza_centroseim_com/IgAHcykiSOgoQ5gT3RLoieD0AR7d0q3XfK7WW-MfqBhRcns">Candidatos</a></strong></h3>
+            </div>
+            <div class="oferta portfolio-section">
+                <h2 class="portfolio-section__title">Oferta 3</h2>
+                <p>fsdfkljs fjsdlk jdkl f</p>
+                <h3><strong class="intro"><a href="https://seimciclos-my.sharepoint.com/:f:/g/personal/onintza_centroseim_com/IgCZ1H4l7CZQTraFMp-IHEFmAYahC8Qisda6rAcbqYKhbMI">Candidatos</a></strong></h3>
+            </div>
+            <div class="oferta portfolio-section">
+                <h2 class="portfolio-section__title">Oferta 4</h2>
+                <p>fsdfkljs fjsdlk jdkl f</p>
+                <h3><strong class="intro"><a href="https://seimciclos-my.sharepoint.com/:f:/g/personal/onintza_centroseim_com/IgC6aUIGIpjvRaONZZXBkBQxARi0HXAWqG_RoVEkm15MkzM">Candidatos</a></strong></h3>
+            </div>
+            <div class="oferta portfolio-section">
+                <h2 class="portfolio-section__title">Oferta 5</h2>
+                <p>fsdfkljs fjsdlk jdkl f</p>
+                <h3><strong class="intro"><a href="https://seimciclos-my.sharepoint.com/:f:/g/personal/onintza_centroseim_com/IgCFJYYLAr9vSaDKKdahus6wAQ7E5FeTAc-p93PuFe4hI58">Candidatos</a></strong></h3>
+            </div>
         </div>
     </main>
     <footer></footer>
