@@ -2,10 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Portfolios de Digitalización | S.E.I.M.</title>
-
+    <title>Ofertas de trabajo</title>
     <style>
         :root {
             --seim-dark: #071923;
@@ -181,29 +178,29 @@
 
         .portfolio-list {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+
             gap: 14px;
             list-style: none;
             counter-reset: portfolios;
         }
 
-        .portfolio-list li {
+        .portfolio-list  {
             counter-increment: portfolios;
             position: relative;
         }
 
-        .portfolio-list li a,
-        .portfolio-list li.unavailable {
+        .portfolio-list  a,
+        .portfolio-list  unavailable {
             min-height: 74px;
             display: flex;
             align-items: center;
             gap: 14px;
-            padding: 18px 22px 18px 70px;
+            padding: 18px 22px 18px 22px;
             position: relative;
             border-radius: 4px;
         }
 
-        .portfolio-list li a {
+        .portfolio-list  a {
             color: var(--seim-white);
             text-decoration: none;
             background: var(--seim-card);
@@ -216,21 +213,20 @@
                     box-shadow 0.25s ease;
         }
 
-        .portfolio-list li a::before,
-        .portfolio-list li.unavailable::before {
-            content: counter(portfolios, decimal-leading-zero);
+        .portfolio-list  a::before,
+        .portfolio-list  unavailable::before {
+
             position: absolute;
-            left: 22px;
             font-size: 0.85rem;
             font-weight: bold;
             letter-spacing: 1px;
         }
 
-        .portfolio-list li a::before {
+        .portfolio-list  a::before {
             color: var(--seim-blue-light);
         }
 
-        .portfolio-list li a:hover {
+        .portfolio-list  a:hover {
             transform: translateY(-5px);
             background: rgba(0, 168, 198, 0.16);
             border-color: var(--seim-blue);
@@ -243,7 +239,7 @@
             font-size: 1.1rem;
         }
 
-        .portfolio-list li.unavailable {
+        .portfolio-list  unavailable {
             color: var(--seim-muted);
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.09);
@@ -251,7 +247,7 @@
             opacity: 0.7;
         }
 
-        .portfolio-list li.unavailable::before {
+        .portfolio-list  unavailable::before {
             color: var(--danger);
         }
 
@@ -308,8 +304,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .portfolio-list li a,
-            .portfolio-list li.unavailable {
+            .portfolio-list  a,
+            .portfolio-list  unavailable {
                 padding-left: 62px;
             }
         }
@@ -327,159 +323,418 @@
                 font-size: 1.6rem;
             }
 
-            .portfolio-list li a,
-            .portfolio-list li.unavailable {
+            .portfolio-list  a,
+            .portfolio-list  unavailable {
                 padding: 16px 15px 16px 54px;
                 font-size: 0.95rem;
             }
 
-            .portfolio-list li a::before,
-            .portfolio-list li.unavailable::before {
+            .portfolio-list  a::before,
+            .portfolio-list  unavailable::before {
                 left: 16px;
             }
         }
     </style>
 </head>
-
 <body>
+    <header class="hero"><h1 class="intro">S.E.I.M.</h1></header>
+    <main class="container">
+        <h1 class="intro">Ofertas de trabajo</h1>
+        <div class="ofertas portfolio-list">
+            <div class="oferta portfolio-section">
+                <h2 class="portfolio-section__title">Oferta 1</h2>
+                <p>
+                <pre>
+    Requisitos
 
-<header class="hero">
-    <h1>Portfolios de Digitalización y Lenguajes de Marcas</h1>
+    Estudios mínimos
 
-    <p>Curso 2026 - 2027</p>
+    Licenciatura
 
-    <p>
-        Administración de Sistemas Informáticos en Red (DAM)
-    </p>
-</header>
+    Requisitos mínimos
 
-<main>
-    <section class="intro">
-        <h2>Bienvenidos</h2>
+    Requisitos mínimos:
 
-        <p>
-            Esta web recopila los
-            portfolios digitales desarrollados por el alumnado durante el
-            curso académico 2026-2027 en la asignatura de
-            <strong>Digitalización y Lenguajes de Marcas</strong>.
-        </p>
+    • Experiencia: Entre 3 y 5 años de experiencia previa en puestos similares.
+    • Titulación: Grado Superior o Licenciatura/Grado Universitario.
+    • Ubicación: Residencia imprescindible en España (no se admiten candidaturas desde LATAM).
+    • Conocimientos técnicos imprescindibles:
+    o Desarrollo en entorno Unix con Lenguaje C y Pro*C.
+    o Programación en Shell Script Unix.
+    o BBDD Oracle: Lenguaje PL/SQL y SQL Plus.
+    o Administración básica de Oracle (gestión de objetos: tablas, funciones, procedimientos, paquetes, triggers, etc.).
+    • Metodología: Waterfall.
 
-        <p>
-            Cada portfolio recoge evidencias de aprendizaje, actividades,
-            proyectos y reflexiones realizadas a lo largo del curso.
-        </p>
-    </section>
+    Requisitos deseables:
+    • Experiencia con Oracle Developer Suite 10g (Forms Developer y Reports Developer).
+    • Nivel medio de inglés.
 
-    <section class="portfolio-section">
-        <div class="container">
-            <h2>Portafolios del alumnado DAM 1.º</h2>
+    • Guardias y disponibilidad: Disponibilidad para picos de producción como campañas de Navidad, Black Friday, etc.
+    • Viajes: Desplazamientos muy excepcionales.
 
-            <ol class="portfolio-list">
-                <li>
-                    <a href="https://alanmarsicano.github.io/DiGi/" target="_blank" rel="noopener noreferrer">
-                        Alan Michel Aguilar
-                        <span class="status"></span>
-                    </a>
-                </li>
+    Descripción
 
-                <li>
-                    <a href="https://bitnai.github.io/DIGI/" target="_blank" rel="noopener noreferrer">
-                        Naiara Bravo
-                        <span class="status"></span>
-                    </a>
-                </li>
+    Funciones
+    En Cas Training, buscamos un/a Application Developer para incorporarse a un proyecto del sector Gran Consumo enfocado en sistemas WMS (Warehouse Management System).
+    Descripción del puesto
 
-                <li>
-                    <a href="https://denil19-99.github.io/digi/" target="_blank" rel="noopener noreferrer">
-                        Denilson Alberto Cajo
-                        <span class="status"></span>
-                    </a>
-                </li>
+    Integrado/a en el equipo, te encargarás del desarrollo, mantenimiento y soporte sobre la plataforma WMS, participando en un entorno estable y colaborativo.
 
-                <li>
-                    <a href="https://alondracueva5.github.io/digi/" target="_blank" rel="noopener noreferrer">
-                        Alondra	Cuevas
-                        <span class="status"></span>
-                    </a>
-                </li>
 
-                <li>
-                    <a href="https://jordycarrillo1.github.io/DIGI/" target="_blank" rel="noopener noreferrer">
-                        Jordy Carrillo
-                        <span class="status"></span>
-                    </a>
-                </li>
+    Se ofrece
+    • Contrato indefinido
+    • Modalidad: Remoto (Delegación de adscripción: Madrid)
+    • Jornada: 40h/semanales, de lunes a viernes en horario de 8:00 a 17:00 h. (Jornada de verano sujeta a necesidades de cliente)
+    • Formar parte de un equipo dinámico altamente cualificado en una empresa en proceso de expansión
+    • Participar en proyectos innovadores y punteros para grandes clientes de primer nivel en distintos sectores de mercado
+    • Proyectos de larga duración, estabilidad profesional y progresión laboral
+    • Acceso gratuito al catálogo de formación anual de Cas Training
+    • Salario negociable en base a la experiencia y valía del candidato/a
 
-                <li>
-                    <a href="https://jtasir.github.io/Kaixo_World/" target="_blank" rel="noopener noreferrer">
-                        Jon	de la Torre
-                        <span class="status"></span>
-                    </a>
-                </li>
+    Categoría
 
-                <li>
-                    <a href="https://vicenteecp.github.io/DIGITALIZACION-ASIR/" target="_blank" rel="noopener noreferrer">
-                        Vicente	Esparza
-                        <span class="status"></span>
-                    </a>
-                </li>
+    Otros - Sin especificar
 
-                <li>
-                    <a href="https://godoyiker.github.io/Digi_Asir/" target="_blank" rel="noopener noreferrer">
-                        Iker Godoy
-                        <span class="status"></span>
-                    </a>
-                </li>
+    Nivel
 
-                <li>
-                    <a href="https://aitorgoicoechea.github.io/Digi_Asir/" target="_blank" rel="noopener noreferrer">
-                        Aitor Goicoechea
-                        <span class="status"></span>
-                    </a>
-                </li>
+    Empleado/a
 
-                <li>
-                    <a href="https://isaias-23.github.io/digi/" target="_blank" rel="noopener noreferrer">
-                        Isaias Gutierrez
-                        <span class="status"></span>
-                    </a>
-                </li>
+    Personas a cargo
 
-                <li>
-                    <a href="https://fd1006.github.io/DIGI-FD/" target="_blank" rel="noopener noreferrer">
-                        Fernando Damián Ocampo
-                        <span class="status"></span>
-                    </a>
-                </li>
+    0
 
-                <li>
-                    <a href="https://IkerPerezArenas.github.io/Digi_Iker/" target="_blank" rel="noopener noreferrer">
-                        Iker Pérez
-                        <span class="status"></span>
-                    </a>
-                </li>
+    Vacantes
+
+    1
+
+    Salario
+
+    29.000€ - 33.000€ Bruto/año
+            </pre></p>
+                <h3><strong class="intro"><a href="https://seimciclos-my.sharepoint.com/:f:/g/personal/onintza_centroseim_com/IgDiHrkgGt6JTqbBC9pKWVchAWSrTb-eBeRVZxXPezde7to">Candidatos</a></strong></h3>
+            </div>
+            <div class="oferta portfolio-section">
+                <h2 class="portfolio-section__title">Oferta 2</h2>
+                <p>
+<pre>
+Requisitos
+
+Ciclo formativo grado superior
+
+Experiencia minina
+
+Sin experiencia
+
+Conocimientos necesarios
+
+Full-stack      Desarrollo front-End         Desarrollo back-End
+
+Git                  PostGresSQL                     ReactJs                    .NET
+
+Sector
+
+Programación, consultoría y otras actividades informáticas
+
+Descripción
+
+Buscamos un desarrollador Full Stack .NET con experiencia en ASP.NET, .NET Worker Services, .NET Core Web API y Blazor WebAssembly o MAUI, para incorporarse a un grupo multidisciplinar que trabaja en entornos de alta exigencia tecnología y gran impacto en negocio.
 
 
 
-                <li>
-                    <a href="https://narvelam.github.io/DIGI/" target="_blank" rel="noopener noreferrer">
-                        Patrick Marcelo	Perez
-                        <span class="status"></span>
-                    </a>
-                </li>
-            </ol>
+Si buscas estabilidad, trabajo remoto y un entorno donde seguir creciendo profesionalmente, esta oportunidad puede ser para ti.
+
+
+
+Funciones
+
+·         Desarrollo e implementación de soluciones antifraude
+
+·         Participación en el desarrollo de aplicaciones Full Stack
+
+·         Colaboración con equipos de negocio, arquitectura y científicos de datos
+
+·         Mantenimiento correctivo y evolutivo de las soluciones desarrolladas
+
+·         Participación en análisis técnicos y resolución de incidencias
+
+Requisitos imprescindibles
+
+·         Ciclo formativo de grado superior
+
+·         Experiencia en desarrollo Full Stack con las tecnologías mencionadas anteriormente
+
+Valoramos
+
+·         Capacidad analítica orientada a la resolución de problemas
+
+·         Habilidad para trabajar en equipo
+
+·         Capacidad de comunicación y colaboración con diferentes áreas y perfiles tecnológicos
+
+·         Proactividad y orientación a resultados
+
+Ubicación
+
+            100% remoto
+
+Visitas puntuales a oficinas  ubicadas  en la zona norte de Madrid
+
+Ofrecemos
+
+·         Contrato indefinido
+
+·         Modalidad 100% remoto
+
+·         Proyecto profesional
+
+·         Formar parte de un equipo interno consolidado
+
+Salario
+
+23000 – 26000 €</pre></p>
+                <h3><strong class="intro"><a href="https://seimciclos-my.sharepoint.com/:f:/g/personal/onintza_centroseim_com/IgAHcykiSOgoQ5gT3RLoieD0AR7d0q3XfK7WW-MfqBhRcns">Candidatos</a></strong></h3>
+            </div>
+            <div class="oferta portfolio-section">
+                <h2 class="portfolio-section__title">Oferta 3</h2>
+                <p><pre>
+Desarrollador/a Java junior
+
+·         Empresa: TechSolutions Software S.L
+
+·         Puesto: Desarrollador/a Junior
+
+·         Departamento: Desarrollador de software
+
+·         Modalidad: Hibrida
+
+·         Tipo de contrato: Jornada completa
+
+
+
+Descripción del puesto
+
+TechSolutions Software S.L busca incorporar a su equipo un/a Desarrollador/a Java Junior para participar en el desarrollo y mantenimiento de aplicaciones.
+
+El puesto esta dirigido a personas que hayan finalizado recientemente sus estudios relacionados con el desarrollo de software y quieran comenzar su carrera profesional en el sector tecnológico.
+
+La persona seleccionada trabajara junto con otros desarrolladores y participara en las distintas fases del desarrollo de aplicaciones.
+
+
+
+Funciones
+
+·         Desarrollo y mantenimiento de aplicaciones utilizando Java.
+
+·         Desarrollo de funcionalidades para aplicaciones web.
+
+·         Utilización de base de dados relacionales.
+
+·         Realización de consultas SQL.
+
+·         Detección y corrección de errores.
+
+·         Uso de Git para el control de versiones.
+
+·         Participación en pruebas de las aplicaciones.
+
+·         Elaboración de documentación técnica.
+
+·         Trabajo en equipo con otros desarrolladores
+
+Se valorará
+
+·         Conocimientos de MySQL
+
+·         Uso de GitHub.
+
+·         Realización de proyectos académicos o personales relacionados con el desarrollo de aplicaciones.
+
+·         Conocimientos de ingles técnico.
+
+
+
+Requisitos
+
+·         Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) o formación equivalente.
+
+·          Conocimientos en Java.
+
+·         Conocimientos en programación orientada objetos.
+
+·         Conocimientos en SQL y bases de datos.
+
+·         Conocimientos básicos de HTML, CSS y JavaScript.
+
+·         Conocimientos en Git.
+
+·         Capacidad de aprendizaje.
+
+·         Capacidad para trabajar en equipo.
+
+·         No se requiere experiencia laboral previa.</pre></p>
+                <h3><strong class="intro"><a href="https://seimciclos-my.sharepoint.com/:f:/g/personal/onintza_centroseim_com/IgCZ1H4l7CZQTraFMp-IHEFmAYahC8Qisda6rAcbqYKhbMI">Candidatos</a></strong></h3>
+            </div>
+            <div class="oferta portfolio-section">
+                <h2 class="portfolio-section__title">Oferta 4</h2>
+                <p>
+<pre>
+Nombre de la empresa : Linguini IT Enterprise
+
+
+Puesto:
+Desarrollador/a Full-Stack Junior
+
+
+Ubicación :
+
+País: india
+
+Ciudad: Nueva Delhi
+
+Calle :Indian Institute of Technology Delhi, Hauz Khas
+
+
+Requisitos :
+
+Experiencia : Ninguna
+
+Ingles B2
+
+Grado superior relacionado a la industria
+
+Se valora :
+
+Nivel alto de Docker
+Experiencia de CRM y ERP
+
+Frontend(Conocimientos) :
+
+Angular 7–21.
+TypeScript y RxJS.
+Componentes, Pipes, Routing y Lazy Loading.
+Interceptors y Services.
+Reactive Forms y State Management.
+Node.js 20–24.
+
+
+Backend (Conocimientos) :
+
+Node.js / Express.
+Proxies y BFF (Backend for Frontend).
+OpenAI / Swagger.
+IBM API Connect.
+API Versioning.
+API Testing.
+
+
+Horario:
+Lunes a viernes, de 09:00 a 16:00 (hora peninsular española)
+Cobertura de una baja de larga duración (mínimo 6 meses)
+
+Sueldo :
+
+Sueldo: 3300598 rupias - 3960718  rupias Anuales ( 30.000€ - 36.000€ )
+Horas Extras : 20000 rupias las 10 horas
+
+Que buscamos :
+
+Que pueda teletrabajar
+
+Capacidad para desenvolverte tanto en frontend como backend.
+
+Experiencia o conocimientos aplicados en integración de soluciones de Inteligencia Artificial.
+
+Capacidad para trabajar con un elevado nivel de autonomía.
+
+Iniciativa y criterio técnico para proponer soluciones.
+
+
+Categoría : Informática - Programacion
+
+Nivel : Empleado
+
+Vacantes : 1
+
+Numero de Inscripciones : 37
+
+            </pre></p>
+                <h3><strong class="intro"><a href="https://seimciclos-my.sharepoint.com/:f:/g/personal/onintza_centroseim_com/IgC6aUIGIpjvRaONZZXBkBQxARi0HXAWqG_RoVEkm15MkzM">Candidatos</a></strong></h3>
+            </div>
+            <div class="oferta portfolio-section">
+                <h2 class="portfolio-section__title">Oferta 5</h2>
+                <p>
+                    <pre>
+Códigos Recio Inc.
+Desarrollador/a Junior Java
+
+Formación continua
+Oportunidades de crecimiento y desarrollo profesional
+
+Descripción completa del empleo
+Ubicación:
+Málaga, MA, ES
+
+Perfil profesional: Desarrollo de Aplicaciones Multiplataforma
+Experiencia requerida: Menos de 2 años de experiencia
+Modalidad del puesto: Híbrido
+
+Rol:
+En Códigos Recio Inc., nuestro lema es Felpudos for the Future.
+Lideramos el desarrollo de soluciones tecnológicas punteras que refuerzan la seguridad nacional e internacional. Como compañía líder en defensa y tecnología, buscamos ampliar nuestro equipo con personas recién tituladas.
+
+Si te apasionan los proyectos retadores y quieres generar impacto social, ¡sigue leyendo!
+
+¡Únete a nuestro equipo de Operaciones Felpudo!
+
+Como compañía líder en defensa y tecnología, en Códigos Recio Inc. buscamos ampliar nuestro equipo de Operaciones Felpudo con personas recién tituladas en CFGS DAM/DAW, en Grado Universitario de Ingeniería Informática, Telecomunicaciones y/o Telemática.
+Si te apasionan los proyectos desafiantes, ¡esta es tu oportunidad!
+
+¿Qué harás?
+
+Participaras en proyectos con arquitecturas de última generación, algunos sobre cloud pública, donde se trabajará en todo el ciclo de vida del software, desde análisis hasta las pruebas.
+Estarás en contacto continuo con las novedades tecnológicas, impulsando la transformación digital.
+Participarás en proyectos y desarrollos que tienen una alta visibilidad y que marcan la diferencia con soluciones disruptivas y especializadas para toda la cadena de valor.
+Colaborarás con referentes tecnológicos del sector que serán tu inspiración y en los que te reflejarás para seguir creciendo profesionalmente
+
+Lo que te ofrecemos
+
+Estabilidad y Futuro ✨: Proyectos a largo plazo en una empresa líder de Defensa con más de 50.000 profesionales, con seguridad financiera.
+Proyectos Innovadores y de Alto Alcance : Trabajarás con tecnologías de vanguardia, con un impacto tanto a nivel nacional como internacional.
+Ambiente Cercano y Transparente : Disfrutarás de una comunicación directa y fluida con responsables y compañeros, en un entorno colaborativo y abierto.
+Autonomía y Flexibilidad : Tendrás libertad para organizar tu trabajo, con una conciliación real y adaptada a tu ritmo.
+Plan de carrera adaptado a ti : Diseñado para impulsar tu crecimiento y desarrollo profesional.
+Formación continua : en Open University y Udemy for Business (¡más de 6.000 cursos para especializarte!).
+Descuentos exclusivos para tu bienestar : Disfruta de ventajas en gimnasios, restaurantes, tiendas, ocio y mucho más al ser empleado de Indra.
+Retribución competitiva y planes de compensación flexibles a tus necesidades.
+
+¿Qué buscamos en ti?
+
+No te preocupes si no cumples el 100% de los requisitos. ¡Queremos conocerte!
+
+✅ Recién graduados/as o profesionales con poca experiencia en CFGS DAM/DAW, en Grado Universitario de Ingeniería Informática, Telecomunicaciones y/o Telemática que quieran desarrollar todo su potencial en una compañía líder en Tecnología.
+
+✅ Conocimientos y/o experiencia en Java, valorables también conocimientos como Suite de Spring (Spring Framework, Spring Boot, Spring Cloud, Spring Data); jUnit / Mockito; AsciiDoc; Bases de datos relacionales.
+✅ Al ser una empresa global, valoramos que tengas un buen nivel de inglés.
+✅ Ganas de trabajar de manera colaborativa, profesionalidad, autonomía e inquietud por aprender y seguir creciendo.
+
+¿Cómo es nuestro proceso de selección?
+
+Revisión de tu perfil : Evaluamos tu experiencia y habilidades para determinar si encajas con lo que buscamos.
+Primera toma de contacto (5-10 min) : Si recibes una llamada de un número desconocido, ¡es nuestro equipo! Será una conversación rápida para conocerte y resolver cualquier duda.
+Entrevista técnica : Te reunirás con el equipo, quienes te explicarán el proyecto y las tareas diarias. También exploraremos tus conocimientos técnicos. Además, te realizaremos breves pruebas de competencias psicológicas e inglés (si es necesario).
+Entrevista con el equipo de atracción de talento : Queremos que nos conozcas mejor como empresa: valores, modelo de carrera, skills…. para que tanto tú como el equipo podamos analizar si hay match.
+Oferta y bienvenida : Si todo va bien, ¡te incorporas a nuestro equipo y comenzamos esta nueva etapa juntos!
+
+Nuestro compromiso es promover ambientes de trabajo en los que se trate con respeto y dignidad a las personas, procurando el desarrollo profesional de la plantilla y garantizando la igualdad de oportunidades en su selección, formación y promoción ofreciendo un entorno de trabajo libre de cualquier discriminación por motivo de género, edad, discapacidad, orientación sexual, identidad o expresión de género, religión, etnia, estado civil o cualquier otra circunstancia personal o social.
+
+¡Códigos Recio Inc. es empresa Top Employer 2026!
+            </pre>
+
+                </p>
+                <h3><strong class="intro"><a href="https://seimciclos-my.sharepoint.com/:f:/g/personal/onintza_centroseim_com/IgCFJYYLAr9vSaDKKdahus6wAQ7E5FeTAc-p93PuFe4hI58">Candidatos</a></strong></h3>
+            </div>
         </div>
-    </section>
-</main>
-
-<footer>
-    <p>
-        <strong>Digitalización 2026-2027</strong>
-    </p>
-
-    <p>Xabier Iraeta y Onintza Aracama</p>
-    <p>Centro S.E.I.M.</p>
-</footer>
-
+    </main>
+    <footer></footer>
 </body>
 </html>
